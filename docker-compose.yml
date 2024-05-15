@@ -7,7 +7,7 @@ services:
     ports:
       - "7000:7000"
     networks:
-      - test-network
+      - my-network
 
   test-user:
     image: test-user
@@ -15,7 +15,7 @@ services:
     ports:
       - "7010:7010"
     networks:
-      - test-network
+      - my-network
 
   test-survey:
     image: test-survey
@@ -23,7 +23,7 @@ services:
     ports:
       - "7020:7020"
     networks:
-      - test-network
+      - my-network
 
   test-board:
     image: test-board
@@ -31,7 +31,7 @@ services:
     ports:
       - "7030:7030"
     networks:
-      - test-network
+      - my-network
 
   test-match:
     image: test-match
@@ -39,7 +39,7 @@ services:
     ports:
       - "7040:7040"
     networks:
-      - test-network
+      - my-network
 
   test-frontend:
     image: test-frontend
@@ -47,8 +47,8 @@ services:
     ports:
       - "2000:2000"
     networks:
-      - test-network
+      - my-network
 
 networks:
-  test-network:
+  my-network:
     external: true
