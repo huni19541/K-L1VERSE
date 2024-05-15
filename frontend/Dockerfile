@@ -18,7 +18,7 @@ COPY . .
 RUN npm run build
 
 # 컨테이너의 3000번 포트를 열어준다.
-EXPOSE 3000
+EXPOSE 2000
 
 # npm start 스크립트 실행
 CMD ["npm", "start"]
