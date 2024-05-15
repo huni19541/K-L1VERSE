@@ -1,7 +1,7 @@
 pipeline {
+    agent any
 
     stages {
-
          stage('Build UserServer') {
             steps {
                 echo "⚗️⚗️ build User start"
