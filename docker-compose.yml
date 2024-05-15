@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  test-gateway:
+    image: test-gateway
+    container_name: test-gateway
+    ports:
+      - "7000:7000"
+    networks:
+      - test-network
+
+  test-user:
+    image: test-user
+    container_name: test-user
+    ports:
+      - "7010:7010"
+    networks:
+      - test-network
+
+  test-survey:
+    image: test-survey
+    container_name: test-survey
+    ports:
+      - "7020:7020"
+    networks:
+      - test-network
+
+  test-board:
+    image: test-board
+    container_name: test-board
+    ports:
+      - "7030:7030"
+    networks:
+      - test-network
+
+  test-match:
+    image: test-match
+    container_name: test-match
+    ports:
+      - "7040:7040"
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    external: true
