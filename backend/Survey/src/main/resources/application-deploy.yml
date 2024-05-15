@@ -1,7 +1,7 @@
 spring:
   datasource:
     url: jdbc:mariadb://52.78.101.95:5020/test
-    username: kl1verse
+    username: kliverse
     password: S10P12A409
 
 logging:

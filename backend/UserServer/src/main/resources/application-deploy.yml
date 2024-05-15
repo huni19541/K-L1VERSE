@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://52.78.101.95:5010/test
-    username: kl1verse
+    username: kliverse
     password: S10P12A409
 
   kafka:
