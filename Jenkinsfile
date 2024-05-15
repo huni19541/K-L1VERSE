@@ -11,6 +11,7 @@ pipeline {
                     PORT=7010
 
                     cd backend/UserServer/
+                    cp -v /var/jenkins_home/keystore.p12 ./src/main/resources/
 
                     chmod +x gradlew
                     ./gradlew clean bootJar
@@ -79,6 +80,7 @@ pipeline {
                     PORT=7040
 
                     cd backend/Match/
+                    cp -v /var/jenkins_home/keystore.p12 ./src/main/resources/
 
                     chmod +x gradlew
                     ./gradlew clean bootJar
@@ -112,6 +114,7 @@ pipeline {
                     PORT=7020
 
                     cd backend/Survey/
+                    cp -v /var/jenkins_home/keystore.p12 ./src/main/resources/
 
                     chmod +x gradlew
                     ./gradlew clean bootJar
