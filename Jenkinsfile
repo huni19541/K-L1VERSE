@@ -184,6 +184,7 @@ pipeline {
                     PORT=7030
 
                     cd backend/Board/
+                    cp -v /var/jenkins_home/keystore.p12 ./src/main/resources/
 
                     chmod +x gradlew
                     ./gradlew clean bootJar
