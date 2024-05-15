@@ -66,7 +66,7 @@ function MainPage() {
     pluginKey: process.env.REACT_APP_CHANNELIO_PLUGIN_KEY,
   });
 
-  const [flag, setFlag] = useState(false);
+  const [flag, setFlag] = useState(true);
 
   useEffect(() => {
     if (!email) {
