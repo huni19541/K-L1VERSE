@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mariadb://52.79.143.176:5020/test
-    username: testuser
-    password: 1234
+    url: jdbc:mariadb://52.78.101.95:5020/test
+    username: kl1verse
+    password: S10P12A409
 
 logging:
   level:

@@ -1,22 +1,22 @@
 spring:
   datasource:
-    url: jdbc:mariadb://52.79.143.176:5040/test
-    username: testuser
-    password: 1234
+    url: jdbc:mariadb://52.78.101.95:5040/test
+    username: kl1verse
+    password: S10P12A409
 
   kafka:
-    bootstrap-servers: 172.26.5.31:9092
+    bootstrap-servers: 52.78.101.95:9092
     consumer:
-      bootstrap-servers: 172.26.5.31:9092
+      bootstrap-servers: 52.78.101.95:9092
       group-id: board-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
-      bootstrap-servers: 172.26.5.31:9092
+      bootstrap-servers: 52.78.101.95:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
-domain: https://lightswitch.kr/test/
+domain: http://52.78.101.95
 
 logging:
   level:

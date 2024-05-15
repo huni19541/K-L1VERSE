@@ -1,6 +1,6 @@
 server:
 
-domain: https://lightswitch.kr/test/
+domain: http://52.78.101.95
 
 logging:
   level:

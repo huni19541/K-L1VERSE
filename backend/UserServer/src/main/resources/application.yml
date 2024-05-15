@@ -11,7 +11,7 @@ spring:
   # redis 설정
   data:
     redis:
-      host: test_redis
+      host: 52.78.101.95
       port: 6379
       password: switchlight2024!
 
@@ -35,17 +35,6 @@ oauth:
     token-uri: https://kauth.kakao.com/oauth/token
     resource-uri: https://kapi.kakao.com/v2/user/me
     login-uri:
-
-
-cloud:
-  aws:
-    s3:
-      bucket: k-l1verse
-    credentials:
-      access-key: AKIA4X5JVVJBRX7QSL5G
-      secret-key: 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
-    region:
-      static: ap-northeast-2
 
 jwt:
   secretKey: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
