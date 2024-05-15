@@ -41,6 +41,14 @@ services:
     networks:
       - test-network
 
+  test-frontend:
+    image: test-frontend
+    container_name: test-frontend
+    ports:
+      - "2000:2000"
+    networks:
+      - test-network
+
 networks:
   test-network:
     external: true

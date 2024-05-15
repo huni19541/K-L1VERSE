@@ -35,14 +35,6 @@ pipeline {
                         echo "🗑️ There is no Docker image named $IMAGE"
                     fi
                     docker build . -t $IMAGE
-
-                    # Docker Run
-                    echo -n "🚀 Docker $APP_NAME Container Start! : "
-                    docker run -d \
-                    --name $APP_NAME \
-                    -p $PORT:$PORT \
-                    --restart=on-failure:10 \
-                    $IMAGE
                 '''
             }
         }
@@ -78,14 +70,6 @@ pipeline {
                         echo "🗑️ There is no Docker image named $IMAGE"
                     fi
                     docker build . -t $IMAGE
-
-                    # Docker Run
-                    echo -n "🚀 Docker $APP_NAME Container Start! : "
-                    docker run -d \
-                    --name $APP_NAME \
-                    -p $PORT:$PORT \
-                    --restart=on-failure:10 \
-                    $IMAGE
                 '''
             }
         }
@@ -119,14 +103,6 @@ pipeline {
                         echo "🗑️ There is no Docker image named $IMAGE"
                     fi
                     docker build . -t $IMAGE
-
-                    # Docker Run
-                    echo -n "🚀 Docker $APP_NAME Container Start! : "
-                    docker run -d \
-                    --name $APP_NAME \
-                    -p $PORT:$PORT \
-                    --restart=on-failure:10 \
-                    $IMAGE
                 '''
             }
         }
@@ -160,14 +136,6 @@ pipeline {
                         echo "🗑️ There is no Docker image named $IMAGE"
                     fi
                     docker build . -t $IMAGE
-
-                    # Docker Run
-                    echo -n "🚀 Docker $APP_NAME Container Start! : "
-                    docker run -d \
-                    --name $APP_NAME \
-                    -p $PORT:$PORT \
-                    --restart=on-failure:10 \
-                    $IMAGE
                 '''
             }
         }
@@ -203,14 +171,6 @@ pipeline {
                         echo "🗑️ There is no Docker image named $IMAGE"
                     fi
                     docker build . -t $IMAGE
-
-                    # Docker Run
-                    echo -n "🚀 Docker $APP_NAME Container Start! : "
-                    docker run -d \
-                    --name $APP_NAME \
-                    -p $PORT:$PORT \
-                    --restart=on-failure:10 \
-                    $IMAGE
                 '''
             }
         }
@@ -244,14 +204,6 @@ pipeline {
                         echo "🗑️ There is no Docker image named $IMAGE"
                     fi
                     docker build . -t $IMAGE
-
-                    # Docker Run
-                    echo -n "🚀 Docker $APP_NAME Container Start! : "
-                    docker run -d \
-                    --name $APP_NAME \
-                    -p $PORT:$PORT \
-                    --restart=on-failure:10 \
-                    $IMAGE
                 '''
             }
         }
@@ -285,15 +237,23 @@ pipeline {
                         echo "🗑️ There is no Docker image named $IMAGE"
                     fi
                     docker build . -t $IMAGE
-
-                    # Docker Run
-                    echo -n "🚀 Docker $APP_NAME Container Start! : "
-                    docker run -d \
-                    --name $APP_NAME \
-                    -p $PORT:$PORT \
-                    --restart=on-failure:10 \
-                    $IMAGE
                 '''
+            }
+        }
+
+        stage('Service start') {
+            steps {
+                 script {
+                    sh "docker-compose up -d --build"
+                }
+            }
+            post{
+                success {
+                    echo 'Success Service Start'
+                }
+                failure {
+                    error 'Fail Service Start'
+                }
             }
         }
     }
