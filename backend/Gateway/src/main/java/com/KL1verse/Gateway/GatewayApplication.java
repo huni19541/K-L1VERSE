@@ -36,7 +36,7 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getAuthServiceRoute() {
 		return route("AUTH-SERVICE")
-			.route(path("/user/login/**", "/user/auth/**"), http("52.78.101.95:7010"))
+			.route(path("/user/login/**", "/user/auth/**"), http(domain+":7010"))
 			.before(rewritePath("/user/(?<segment>.*)", "/${segment}"))
 			.build();
 	}
@@ -44,7 +44,7 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getUserServiceRoute() {
 		return route("USER-SERVICE")
-			.route(path("/user/**"), http("52.78.101.95:7010"))
+			.route(path("/user/**"), http(domain+":7010"))
 			.before(rewritePath("/user/(?<segment>.*)", "/${segment}"))
 			.filter(jwtFilter.instrument())
 			.build();
@@ -53,7 +53,7 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getSurveyServiceRoute() {
 		return route("SURVEY-SERVICE")
-			.route(path("/survey/**"), http("52.78.101.95:7020"))
+			.route(path("/survey/**"), http(domain+":7020"))
 			.before(rewritePath("/survey/(?<segment>.*)", "/${segment}"))
 			.build();
 	}
@@ -61,7 +61,7 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getBoardServiceRoute() {
 		return route("BOARD-SERVICE")
-			.route(path("/board/**"), http("52.78.101.95:7030"))
+			.route(path("/board/**"), http(domain+":7030"))
 			.before(rewritePath("/board/(?<segment>.*)", "/${segment}"))
 			.filter(jwtFilter.instrument())
 			.build();
@@ -70,7 +70,7 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getMatchServiceRoute() {
 		return route("MATCH-SERVICE")
-			.route(path("/match/**"), http("52.78.101.95:7040"))
+			.route(path("/match/**"), http(domain+":7040"))
 			.before(rewritePath("/match/(?<segment>.*)", "/${segment}"))
 			.filter(jwtFilter.instrument())
 			.build();
