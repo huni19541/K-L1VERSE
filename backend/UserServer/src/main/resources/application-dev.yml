@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://52.78.101.95:5010/test
+    username: root
+    password: S10P12A409
+
+  kafka:
+    bootstrap-servers: 52.78.101.95:9092
+    consumer:
+      bootstrap-servers: 52.78.101.95:9092
+      group-id: user-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: 52.78.101.95:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+oauth:
+  google:
+    redirect-uri: http://localhost:3000/GoogleAuth
+  naver:
+    redirect-uri: http://localhost:3000/NaverAuth/
+  kakao:
+    redirect-uri: http://localhost:3000/KakaoAuth/
+
+domain: http://localhost:3000

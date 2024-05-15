@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
+import { LSClient, LSUser } from "lightswitch-js-sdk";
 import { UserState } from "../../global/UserState";
 import Board from "../../components/main/Board";
 import {
@@ -65,14 +66,52 @@ function MainPage() {
     pluginKey: process.env.REACT_APP_CHANNELIO_PLUGIN_KEY,
   });
 
+  const [flag, setFlag] = useState(false);
+
   useEffect(() => {
     if (!email) {
       navigate("/login");
     } else {
       ChannelIO("showChannelButton");
+
+      let user = new LSUser("123", {
+        mainBadge: userState.mainBadge === null ? "null" : "not null",
+      });
+
+      console.log(
+        "mainBadge:",
+        userState.mainBadge === null ? "null" : "not null",
+      );
+
+      let lightswitch = LSClient.getInstance();
+
+      lightswitch
+        .init({
+          sdkKey: "0ca69b1cfd754a1fb78191c941c5c76e",
+          onFlagChanged: () => {},
+          endpoint: "https://lightswitch.kr",
+        })
+        .then(() => {
+          console.log(
+            "###########",
+            lightswitch.getBooleanFlag("자바스크립트 배너 테스트", user, false),
+          );
+
+          setFlag(
+            lightswitch.getBooleanFlag("자바스크립트 배너 테스트", user, false),
+          );
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
       return () => ChannelIO("hideChannelButton");
     }
   }, []);
+
+  useEffect(() => {
+    console.log("@@@@@@@@@@@@@", flag);
+  }, [flag]);
 
   function handleAllBtn() {
     navigate("/waggle");
@@ -88,6 +127,7 @@ function MainPage() {
         <div>
           <Notice />
           <Banner />
+          {!flag && <Survey />}
           <Category>
             <Title>💬 커뮤니티</Title>
             <AllBtn onClick={handleAllBtn}>전체보기</AllBtn>
@@ -106,7 +146,7 @@ function MainPage() {
             경기 결과 예측에 성공하여 순위에 올라보세요!
           </NostraContent>
           <Nostradamus />
-          <Survey />
+          {flag && <Survey />}
           <Footer />
           {nickname === null && <EditNicknameModal type="signUp" />}
         </div>
