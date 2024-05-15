@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs "NodeJS 20.9.0"
+    }
+
     stages {
          stage('Build UserServer') {
             steps {
