@@ -1,13 +1,13 @@
 spring:
   kafka:
-    bootstrap-servers: kafka:9092
+    bootstrap-servers: 52.78.101.95:9092
     consumer:
-      bootstrap-servers: kafka:9092
+      bootstrap-servers: 52.78.101.95:9092
       group-id: crawl-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
-      bootstrap-servers: kafka:9092
+      bootstrap-servers: 52.78.101.95:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 

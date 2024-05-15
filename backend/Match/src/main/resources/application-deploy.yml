@@ -16,7 +16,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
-domain: http://52.78.101.95
+domain: https://dear103.store
 
 logging:
   level:

@@ -19,13 +19,13 @@ spring:
 
 oauth:
   google:
-    redirect-uri: http://52.78.101.95/GoogleAuth
+    redirect-uri: https://dear103.store/GoogleAuth
   naver:
-    redirect-uri: http://52.78.101.95/NaverAuth/
+    redirect-uri: https://dear103.store/NaverAuth/
   kakao:
-    redirect-uri: http://52.78.101.95/KakaoAuth/
+    redirect-uri: https://dear103.store/KakaoAuth/
 
-domain: http://52.78.101.95
+domain: https://dear103.store
 
 logging:
   level:

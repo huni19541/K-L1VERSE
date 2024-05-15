@@ -5,9 +5,9 @@ spring:
     password: S10P12A409
 
   kafka:
-    bootstrap-servers: 172.26.5.31:9092
+    bootstrap-servers: 52.78.101.95:9092
     consumer:
-      bootstrap-servers: 172.26.5.31:9092
+      bootstrap-servers: 52.78.101.95:9092
       group-id: board-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -16,7 +16,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
-domain: http://52.78.101.95
+domain: https://dear103.store
 
 logging:
   level:
