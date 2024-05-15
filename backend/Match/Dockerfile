@@ -5,7 +5,7 @@ LABEL maintainer="ignuy"
 # Add a volume to /tmp
 VOLUME /tmp
 # Make port 8040 available to the world outside this container
-EXPOSE 8040
+EXPOSE 7040
 # The application's jar file
 ARG JAR_FILE=./build/libs/Match-0.0.1-SNAPSHOT.jar
 # Add the application's jar to the container

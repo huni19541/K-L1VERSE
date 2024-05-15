@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://test_user_db:5010/user
+    username: root
+    password: 1234
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      bootstrap-servers: kafka:9092
+      group-id: user-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: kafka:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+oauth:
+  google:
+    redirect-uri: https://lightswitch.kr/test/GoogleAuth
+  naver:
+    redirect-uri: https://lightswitch.kr/test/NaverAuth/
+  kakao:
+    redirect-uri: https://lightswitch.kr/test/KakaoAuth/
+
+domain: https://lightswitch.kr/test/
+
+logging:
+  level:
+    root: warn

@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://test_survey_db:5020/survey
+    username: root
+    password: 1234
+
+logging:
+  level:
+    root: warn

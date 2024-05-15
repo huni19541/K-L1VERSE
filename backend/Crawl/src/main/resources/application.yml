@@ -1,0 +1,6 @@
+server:
+    poert: 7050
+
+spring:
+    profiles:
+        active: deploy

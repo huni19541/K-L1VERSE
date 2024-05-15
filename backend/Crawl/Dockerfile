@@ -5,7 +5,7 @@ LABEL maintainer="ignuy"
 # Add a volume to /tmp
 VOLUME /tmp
 # Make port 8030 available to the world outside this container
-EXPOSE 8050
+EXPOSE 7050
 # The application's jar file
 ARG JAR_FILE=./build/libs/Crawl-0.0.1-SNAPSHOT.jar
 # Add the application's jar to the container

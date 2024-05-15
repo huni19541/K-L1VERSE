@@ -1,0 +1,7 @@
+server:
+
+domain: https://lightswitch.kr/test/
+
+logging:
+  level:
+    root: warn

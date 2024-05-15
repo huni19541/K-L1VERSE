@@ -4,7 +4,7 @@ const domain = process.env.REACT_APP_DOMAIN;
 const domainAndPort = process.env.REACT_APP_DOMAIN_AND_PORT;
 
 const instance = axios.create({
-  baseURL: `${domain}:8000`,
+  baseURL: `${domain}/api`,
   params: {},
 });
 

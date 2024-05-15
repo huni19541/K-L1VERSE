@@ -36,16 +36,16 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getAuthServiceRoute() {
 		return route("AUTH-SERVICE")
-			.route(path("/user/login/**", "/user/auth/**"), http(domain+":8010"))
-			.before(rewritePath("/user/(?<segment>.*)", "/${segment}"))
+			.route(path("/test/api/user/login/**", "/test/api/user/auth/**"), http("test-user:8010"))
+			.before(rewritePath("/test/api/user/(?<segment>.*)", "/${segment}"))
 			.build();
 	}
 
 	@Bean
 	public RouterFunction<ServerResponse> getUserServiceRoute() {
 		return route("USER-SERVICE")
-			.route(path("/user/**"), http(domain+":8010"))
-			.before(rewritePath("/user/(?<segment>.*)", "/${segment}"))
+			.route(path("/test/api/user/**"), http("test-user:8010"))
+			.before(rewritePath("/test/api/user/(?<segment>.*)", "/${segment}"))
 			.filter(jwtFilter.instrument())
 			.build();
 	}
@@ -53,16 +53,16 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getSurveyServiceRoute() {
 		return route("SURVEY-SERVICE")
-			.route(path("/survey/**"), http(domain+":8020"))
-			.before(rewritePath("/survey/(?<segment>.*)", "/${segment}"))
+			.route(path("/test/api/survey/**"), http("test-servey:8020"))
+			.before(rewritePath("/test/api/survey/(?<segment>.*)", "/${segment}"))
 			.build();
 	}
 
 	@Bean
 	public RouterFunction<ServerResponse> getBoardServiceRoute() {
 		return route("BOARD-SERVICE")
-			.route(path("/board/**"), http(domain+":8030"))
-			.before(rewritePath("/board/(?<segment>.*)", "/${segment}"))
+			.route(path("/test/api/board/**"), http("test-board:8030"))
+			.before(rewritePath("/test/api/board/(?<segment>.*)", "/${segment}"))
 			.filter(jwtFilter.instrument())
 			.build();
 	}
@@ -70,8 +70,8 @@ public class GatewayApplication {
 	@Bean
 	public RouterFunction<ServerResponse> getMatchServiceRoute() {
 		return route("MATCH-SERVICE")
-			.route(path("/match/**"), http(domain+":8040"))
-			.before(rewritePath("/match/(?<segment>.*)", "/${segment}"))
+			.route(path("/test/api/match/**"), http("test-match:8040"))
+			.before(rewritePath("/test/api/match/(?<segment>.*)", "/${segment}"))
 			.filter(jwtFilter.instrument())
 			.build();
 	}

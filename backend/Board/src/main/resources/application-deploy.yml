@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://test_board_db:5030/board
+    username: root
+    password: 1234
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      bootstrap-servers: kafka:9092
+      group-id: board-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: kafka:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+domain: https://lightswitch.kr/test/
+
+logging:
+  level:
+    root: warn
