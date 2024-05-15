@@ -21,6 +21,7 @@ public class CorsConfig {
         config.addAllowedOrigin("http://i10a409.p.ssafy.io");
         config.addAllowedOrigin("https://k-l1verse.site");
         config.addAllowedOrigin("http://k-l1verse.site");
+        config.addAllowedOrigin("https://dear103.store");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         config.addExposedHeader("Authorization");

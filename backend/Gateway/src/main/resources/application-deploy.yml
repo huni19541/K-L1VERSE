@@ -6,7 +6,3 @@ server:
     key-store-password: 1234
 
 domain: https://dear103.store
-
-logging:
-  level:
-    root: warn

@@ -26,7 +26,3 @@ oauth:
     redirect-uri: https://dear103.store/KakaoAuth/
 
 domain: https://dear103.store
-
-logging:
-  level:
-    root: warn

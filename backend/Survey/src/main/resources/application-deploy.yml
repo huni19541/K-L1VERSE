@@ -3,7 +3,3 @@ spring:
     url: jdbc:mariadb://52.78.101.95:5020/test
     username: kliverse
     password: S10P12A409
-
-logging:
-  level:
-    root: warn

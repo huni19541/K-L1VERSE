@@ -17,7 +17,3 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 domain: https://dear103.store
-
-logging:
-  level:
-    root: warn
