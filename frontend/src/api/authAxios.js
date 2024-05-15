@@ -3,7 +3,7 @@ import axios from "axios";
 const domain = process.env.REACT_APP_DOMAIN;
 
 const instance = axios.create({
-  baseURL: `${domain}/api`,
+  baseURL: `${domain}:7000`,
   params: {},
 });
 
