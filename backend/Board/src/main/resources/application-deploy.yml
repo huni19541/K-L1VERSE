@@ -1,13 +1,13 @@
-server:
-  ssl:
-    enabled: true
-    key-store: classpath:/keystore.p12
-    key-store-type: PKCS12
-    key-store-password: 1234
+#server:
+#  ssl:
+#    enabled: true
+#    key-store: classpath:/keystore.p12
+#    key-store-type: PKCS12
+#    key-store-password: 1234
 
 spring:
   datasource:
-    url: jdbc:mariadb://52.78.101.95:5030/test
+    url: jdbc:mariadb://52.78.101.95:5010/test
     username: root
     password: S10P12A409
 
