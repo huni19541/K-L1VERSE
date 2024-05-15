@@ -35,4 +35,4 @@ services:
     image: test-frontend
     container_name: test-frontend
     ports:
-      - "2000:2000"
+      - "3000:3000"

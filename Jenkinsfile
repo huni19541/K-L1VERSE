@@ -45,7 +45,7 @@ pipeline {
                 sh '''
                     APP_NAME=test-frontend
                     IMAGE=test-frontend
-                    PORT=2000
+                    PORT=3000
 
                     cp -v /var/jenkins_home/.env ./frontend
 
