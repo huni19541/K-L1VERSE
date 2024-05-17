@@ -87,9 +87,9 @@ function MainPage() {
 
       lightswitch
         .init({
-          sdkKey: "0ca69b1cfd754a1fb78191c941c5c76e",
+          sdkKey: "f6979511df8e4669bfc594025724e666",
           onFlagChanged: () => {},
-          endpoint: "https://lightswitch.kr",
+          endpoint: "http://dear103.store:5555",
         })
         .then(() => {
           console.log(
