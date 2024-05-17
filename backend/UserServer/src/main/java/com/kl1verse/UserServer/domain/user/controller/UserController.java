@@ -220,4 +220,9 @@ public class UserController {
     public ResponseEntity<?> checkGoal(@RequestBody CheckGoalResDto checkGoalResDto) {
         return ResponseEntity.ok().body(userService.checkGoal(checkGoalResDto));
     }
+
+    @GetMapping("/event")
+    public ResponseEntity<?> checkEvent(HttpServletRequest request) {
+        return ResponseEntity.ok(userService.checkEvent(request));
+    }
 }
